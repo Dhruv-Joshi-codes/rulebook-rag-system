@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>University Regulation QA & Contradiction Radar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen font-['Plus_Jakarta_Sans'] antialiased selection:bg-indigo-500 selection:text-white">
+
+  <!-- Top Navigation Bar -->
+  <header class="border-b border-slate-800 bg-slate-900/80 backdrop-blur sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <div class="flex items-center space-x-3">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-600 via-blue-600 to-amber-500 flex items-center justify-center shadow-lg shadow-indigo-500/20">
+          <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+          </svg>
+        </div>
+        <div>
+          <h1 class="text-lg font-bold tracking-tight text-white flex items-center gap-2">
+            LexCorpus <span class="text-xs px-2 py-0.5 rounded-full bg-indigo-500/20 text-indigo-400 border border-indigo-500/30">v1.0</span>
+          </h1>
+          <p class="text-xs text-slate-400">University Regulation QA & Contradiction Triangulation</p>
+        </div>
+      </div>
+
+      <!-- Model Selector & Status -->
+      <div class="flex items-center space-x-4">
+        <div class="flex items-center space-x-2 bg-slate-900 border border-slate-700/60 rounded-lg px-3 py-1.5 text-xs shadow-inner">
+          <span class="text-slate-400">Engine:</span>
+          <select id="model-select" class="bg-transparent text-indigo-300 font-mono font-medium focus:outline-none cursor-pointer">
+            <option value="gemma3:1b" class="bg-slate-900 text-slate-100">gemma3:1b (Ollama)</option>
+            <option value="deepseek-r1:1.5b" class="bg-slate-900 text-slate-100">deepseek-r1:1.5b (Ollama)</option>
+            <option value="heuristic-fast" class="bg-slate-900 text-slate-100">heuristic-fast (Instant)</option>
+          </select>
+        </div>
+        <div id="corpus-stat-badge" class="hidden sm:flex items-center gap-1.5 text-xs text-emerald-400 bg-emerald-950/50 border border-emerald-800/60 px-2.5 py-1.5 rounded-lg">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+          <span id="corpus-word-count">7,122 words loaded</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+
+    <!-- Navigation Tabs -->
+    <div class="flex border-b border-slate-800 space-x-1 mb-8 overflow-x-auto pb-1 scrollbar-none">
+      <button class="tab-btn active px-4 py-2.5 text-sm font-semibold rounded-lg transition" data-tab="qa-tab">
+        Advisor Console
+      </button>
+      <button class="tab-btn px-4 py-2.5 text-sm font-medium text-slate-400 hover:text-slate-200 rounded-lg transition" data-tab="contradictions-tab">
+        Planted Contradictions (3)
+      </button>
+      <button class="tab-btn px-4 py-2.5 text-sm font-medium text-slate-400 hover:text-slate-200 rounded-lg transition" data-tab="unanswerable-tab">
+        Unanswerable Benchmark (25)
+      </button>
+      <button class="tab-btn px-4 py-2.5 text-sm font-medium text-slate-400 hover:text-slate-200 rounded-lg transition" data-tab="corpus-tab">
+        Rulebook Explorer
+      </button>
+      <button class="tab-btn px-4 py-2.5 text-sm font-medium text-slate-400 hover:text-slate-200 rounded-lg transition" data-tab="eval-tab">
+        Evaluation Suite
+      </button>
+    </div>
+
+    <!-- TAB 1: QA CONSOLE -->
+    <div id="qa-tab" class="tab-content block space-y-6">
+      <!-- Query Box Card -->
+      <div class="bg-slate-900/60 border border-slate-800 rounded-2xl p-6 shadow-xl backdrop-blur">
+        <label for="query-input" class="block text-sm font-semibold text-slate-200 mb-2">
+          Consult University Statutes & Standing Policies
+        </label>
+        <p class="text-xs text-slate-400 mb-4">
+          Ask any question. The system will cite exact clauses, admit when the rulebook is silent, and triangulate when clauses contradict each other.
+        </p>
+
+        <div class="relative">
+          <textarea id="query-input" rows="3" class="w-full bg-slate-950 border border-slate-700/80 rounded-xl px-4 py-3 text-slate-100 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-sm leading-relaxed" placeholder="e.g. What attendance percentage do I need to sit my end-semester exams if I was hospitalized?"></textarea>
+          <button id="ask-btn" class="absolute bottom-3 right-3 px-4 py-2 bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-semibold rounded-lg shadow-md hover:shadow-indigo-500/25 transition flex items-center gap-2">
+            <span>Analyze Regulations</span>
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+          </button>
+        </div>
+
+        <!-- Quick-click Sample Queries -->
+        <div class="mt-4 pt-4 border-t border-slate-800/80">
+          <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Preset Benchmark Triggers:</p>
+          <div class="flex flex-wrap gap-2">
+            <button class="sample-btn px-3 py-1.5 rounded-lg bg-amber-500/10 hover:bg-amber-500/20 text-amber-300 border border-amber-500/30 text-xs transition font-medium flex items-center gap-1.5" data-query="What attendance percentage do I need to sit my end-semester exams if I was hospitalized?">
+              <span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>
+              Contradiction 1: Attendance vs Medical vs Committee Waiver
+            </button>
+            <button class="sample-btn px-3 py-1.5 rounded-lg bg-amber-500/10 hover:bg-amber-500/20 text-amber-300 border border-amber-500/30 text-xs transition font-medium flex items-center gap-1.5" data-query="Will I be locked out or fined if I return to my hostel at 1 AM after working on my capstone project in the lab?">
+              <span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>
+              Contradiction 2: Curfew Lockout vs 24h Lab Access
+            </button>
+            <button class="sample-btn px-3 py-1.5 rounded-lg bg-amber-500/10 hover:bg-amber-500/20 text-amber-300 border border-amber-500/30 text-xs transition font-medium flex items-center gap-1.5" data-query="If I drop a course on Day 21 (Week 3), what refund percentage do I get?">
+              <span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>
+              Contradiction 3: 80% Drop Refund vs 0% Forfeiture
+            </button>
+            <button class="sample-btn px-3 py-1.5 rounded-lg bg-purple-500/10 hover:bg-purple-500/20 text-purple-300 border border-purple-500/30 text-xs transition font-medium flex items-center gap-1.5" data-query="What happens if I miss the end-semester examination because of my sister's wedding abroad?">
+              <span class="w-1.5 h-1.5 rounded-full bg-purple-400"></span>
+              Unanswerable: Sister's Wedding Absence
+            </button>
+            <button class="sample-btn px-3 py-1.5 rounded-lg bg-purple-500/10 hover:bg-purple-500/20 text-purple-300 border border-purple-500/30 text-xs transition font-medium flex items-center gap-1.5" data-query="Am I allowed to keep a small aquarium with two goldfish in my hostel room?">
+              <span class="w-1.5 h-1.5 rounded-full bg-purple-400"></span>
+              Unanswerable: Pet Goldfish in Dorm
+            </button>
+            <button class="sample-btn px-3 py-1.5 rounded-lg bg-blue-500/10 hover:bg-blue-500/20 text-blue-300 border border-blue-500/30 text-xs transition font-medium flex items-center gap-1.5" data-query="What is the maximum number of credits an undergraduate student can take in a normal semester without an overload petition?">
+              <span class="w-1.5 h-1.5 rounded-full bg-blue-400"></span>
+              Answerable: Standard Credit Load Cap
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Loading State -->
+      <div id="loading-spinner" class="hidden py-12 text-center">
+        <div class="inline-block animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-indigo-500 mb-3"></div>
+        <p class="text-xs text-slate-400 font-mono tracking-wide">Retrieving clauses & cross-checking regulatory conflicts...</p>
+      </div>
+
+      <!-- Results Display Card -->
+      <div id="result-card" class="hidden bg-slate-900/80 border border-slate-800 rounded-2xl p-6 shadow-2xl space-y-6">
+        <!-- Status Header -->
+        <div class="flex flex-wrap items-center justify-between gap-4 pb-4 border-b border-slate-800">
+          <div class="flex items-center space-x-3">
+            <span id="status-badge" class="px-3 py-1 rounded-full text-xs font-extrabold tracking-wide uppercase">
+              STATUS
+            </span>
+            <span id="model-badge" class="text-xs text-slate-400 font-mono">
+              Model: gemma3:1b
+            </span>
+          </div>
+          <div class="text-xs text-slate-400 font-mono">
+            Latency: <span id="latency-text" class="text-indigo-400">120ms</span>
+          </div>
+        </div>
+
+        <!-- Contradiction Radar Alert (Visible if Contradiction) -->
+        <div id="contradiction-banner" class="hidden bg-amber-950/40 border border-amber-600/40 rounded-xl p-5 space-y-3">
+          <div class="flex items-center gap-2 text-amber-400 font-bold text-sm">
+            <svg class="w-5 h-5 text-amber-400 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+            </svg>
+            <span id="contradiction-topic">Regulatory Contradiction Detected</span>
+          </div>
+          <p id="contradiction-tension" class="text-xs text-amber-200/90 leading-relaxed"></p>
+          <div class="mt-3 pt-3 border-t border-amber-600/30">
+            <p class="text-xs font-semibold text-amber-400 uppercase tracking-wider mb-1">Administrative Dilemma for Student:</p>
+            <p id="contradiction-ambiguity" class="text-xs text-amber-100/80 italic"></p>
+          </div>
+        </div>
+
+        <!-- Side-by-Side Conflicting Clauses -->
+        <div id="conflicting-clauses-container" class="hidden space-y-2">
+          <h4 class="text-xs font-bold text-slate-300 uppercase tracking-wider">Conflicting Rulebook Excerpts:</h4>
+          <div id="conflicting-clauses-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3"></div>
+        </div>
+
+        <!-- Main Answer Body -->
+        <div class="prose prose-invert max-w-none text-sm text-slate-200 leading-relaxed whitespace-pre-wrap font-sans" id="answer-text">
+        </div>
+
+        <!-- Governing Citations Section -->
+        <div id="citations-container" class="pt-4 border-t border-slate-800/80 space-y-2">
+          <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider">Exact Clause Citations:</h4>
+          <div id="citations-list" class="space-y-2"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 2: PLANTED CONTRADICTIONS -->
+    <div id="contradictions-tab" class="tab-content hidden space-y-6">
+      <div class="bg-slate-900/60 border border-slate-800 rounded-2xl p-6 shadow-xl">
+        <h2 class="text-lg font-bold text-white mb-2">Ground-Truth Planted Contradictions</h2>
+        <p class="text-xs text-slate-400 mb-6">
+          Three genuine legal contradictions planted across mixed formats (Markdown, CSV schedule, PDF standing charter).
+        </p>
+        <div id="planted-contradictions-list" class="space-y-6"></div>
+      </div>
+    </div>
+
+    <!-- TAB 3: UNANSWERABLE TEST SET -->
+    <div id="unanswerable-tab" class="tab-content hidden space-y-6">
+      <div class="bg-slate-900/60 border border-slate-800 rounded-2xl p-6 shadow-xl">
+        <div class="flex items-center justify-between mb-4">
+          <div>
+            <h2 class="text-lg font-bold text-white">25 Hard Unanswerable Questions</h2>
+            <p class="text-xs text-slate-400">
+              Plausible, adjacent student edge-cases where the rulebook maintains strict silence.
+            </p>
+          </div>
+          <span class="text-xs px-3 py-1 bg-purple-950/60 text-purple-300 border border-purple-800/60 rounded-full font-mono">
+            Target: 100% Refusal Rate
+          </span>
+        </div>
+        <div id="unanswerables-list" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
+      </div>
+    </div>
+
+    <!-- TAB 4: CORPUS EXPLORER -->
+    <div id="corpus-tab" class="tab-content hidden space-y-6">
+      <div class="bg-slate-900/60 border border-slate-800 rounded-2xl p-6 shadow-xl">
+        <h2 class="text-lg font-bold text-white mb-2">University Regulatory Corpus</h2>
+        <p class="text-xs text-slate-400 mb-6">
+          Detailed corpus exceeding 6,000 words across Markdown pages, a CSV schedule, and a PDF charter.
+        </p>
+        <div id="corpus-docs-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-6"></div>
+        
+        <!-- Document Clauses Viewer -->
+        <div id="doc-viewer" class="hidden bg-slate-950 border border-slate-800 rounded-xl p-5 space-y-4">
+          <div class="flex items-center justify-between pb-3 border-b border-slate-800">
+            <h3 id="viewer-title" class="font-bold text-sm text-indigo-300"></h3>
+            <button id="close-viewer" class="text-xs text-slate-400 hover:text-slate-200">Close Viewer ✕</button>
+          </div>
+          <div id="viewer-clauses" class="space-y-4 max-h-[600px] overflow-y-auto pr-2 scrollbar-thin"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 5: EVALUATION SUITE -->
+    <div id="eval-tab" class="tab-content hidden space-y-6">
+      <div class="bg-slate-900/60 border border-slate-800 rounded-2xl p-6 shadow-xl space-y-6">
+        <div class="flex flex-wrap items-center justify-between gap-4">
+          <div>
+            <h2 class="text-lg font-bold text-white">Automated Benchmark Evaluation</h2>
+            <p class="text-xs text-slate-400">
+              Evaluates all 25 unanswerable questions, the 3 planted contradictions, and 12 ground-truth answerable queries (40 tests total).
+            </p>
+          </div>
+          <button id="run-bench-btn" class="px-5 py-2.5 bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-xs rounded-xl shadow-lg shadow-emerald-600/20 transition flex items-center gap-2">
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <span>Run Full 40-Test Suite</span>
+          </button>
+        </div>
+
+        <!-- Benchmark Metrics Cards -->
+        <div id="bench-metrics" class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div class="bg-slate-950/80 border border-slate-800 rounded-xl p-4 text-center">
+            <span class="text-xs text-slate-400 uppercase tracking-wider">Overall Accuracy</span>
+            <div id="metric-overall" class="text-2xl font-extrabold text-white mt-1">--</div>
+            <span class="text-[10px] text-slate-500">40 total test cases</span>
+          </div>
+          <div class="bg-slate-950/80 border border-slate-800 rounded-xl p-4 text-center">
+            <span class="text-xs text-purple-400 uppercase tracking-wider">Refusal Rate (Silent)</span>
+            <div id="metric-unans" class="text-2xl font-extrabold text-purple-400 mt-1">--</div>
+            <span class="text-[10px] text-slate-500">25 unanswerable tests</span>
+          </div>
+          <div class="bg-slate-950/80 border border-slate-800 rounded-xl p-4 text-center">
+            <span class="text-xs text-amber-400 uppercase tracking-wider">Contradiction Radar</span>
+            <div id="metric-contra" class="text-2xl font-extrabold text-amber-400 mt-1">--</div>
+            <span class="text-[10px] text-slate-500">3 multi-clause conflicts</span>
+          </div>
+          <div class="bg-slate-950/80 border border-slate-800 rounded-xl p-4 text-center">
+            <span class="text-xs text-emerald-400 uppercase tracking-wider">Answer Citation Rate</span>
+            <div id="metric-ans" class="text-2xl font-extrabold text-emerald-400 mt-1">--</div>
+            <span class="text-[10px] text-slate-500">12 factual answers</span>
+          </div>
+        </div>
+
+        <!-- Benchmark Execution Log Table -->
+        <div class="space-y-3">
+          <h3 class="text-xs font-bold text-slate-400 uppercase tracking-wider">Detailed Execution Log:</h3>
+          <div class="bg-slate-950 border border-slate-800 rounded-xl overflow-hidden">
+            <div class="overflow-x-auto max-h-[450px] scrollbar-thin">
+              <table class="w-full text-left text-xs">
+                <thead class="bg-slate-900 text-slate-400 border-b border-slate-800 font-mono sticky top-0">
+                  <tr>
+                    <th class="p-3">Type</th>
+                    <th class="p-3">ID</th>
+                    <th class="p-3">Query</th>
+                    <th class="p-3">Expected</th>
+                    <th class="p-3">Actual Status</th>
+                    <th class="p-3">Verdict</th>
+                    <th class="p-3">Latency</th>
+                  </tr>
+                </thead>
+                <tbody id="bench-log-rows" class="divide-y divide-slate-800 font-sans">
+                  <tr>
+                    <td colspan="7" class="p-4 text-center text-slate-500">Click "Run Full 40-Test Suite" to evaluate the RAG system.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>

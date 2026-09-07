@@ -1,0 +1,19 @@
+Transaction_Category,Deadline_or_Window,Financial_Penalty_or_Refund_Tier,Governing_Policy_Terms
+Semester Tuition Payment,Day 0 (Prior to First Day of Class),Full Balance Due (0% penalty),Standard registration clearance. Registration canceled if unpaid by 17:00.
+Late Registration Fee,Day 1 to Day 7 of Semester,$50 Fixed Late Surcharge,Permitted only if seats remain available in enrolled courses.
+Extended Late Registration,Day 8 to Day 14 of Semester,$100 Escalated Late Surcharge,Requires written authorization from the Dean of Academic Affairs.
+Course Withdrawal (Day 15 to Day 35),Day 15 to Day 35 of Semester,0% Refund (100% Tuition Forfeiture),"Strict forfeiture policy [PLANTED CONTRADICTION 3B]. No tuition refunds, rebates, or credits shall be issued for course drops or withdrawals recorded between Day 15 and Day 35 of the academic semester."
+Complete University Term Withdrawal,Prior to Day 7 of Semester,100% Tuition Refund minus $100 Admin Fee,Formal withdrawal from all courses processed through Registry.
+Complete University Term Withdrawal,Day 8 to Day 14 of Semester,75% Tuition Refund,Prorated refund credited to source account within 21 banking days.
+Complete University Term Withdrawal,Day 15 to Day 28 of Semester,50% Tuition Refund,Half tuition forfeited; laboratory and tech fees non-refundable.
+Complete University Term Withdrawal,After Day 28 of Semester,0% Refund (100% Total Forfeiture),"Full liability for semester tuition, campus fees, and laboratory levies."
+Hostel Rent Cancellation,Before Housing Move-in Date,90% Rent Refund,10% processing fee retained by Housing Office.
+Hostel Rent Cancellation,Day 1 to Day 14 after Move-in,50% Rent Refund,Damage deposit refunded after mandatory room inspection.
+Hostel Rent Cancellation,After Day 14 of Occupancy,0% Rent Refund,Resident remains liable for full semester housing rent.
+Graduation & Commencement Fee,Due by Week 10 of Final Semester,$150 Mandatory Fee,"Covers cap and gown rental, diploma parchment, and degree audit."
+Official Transcript Request,Standard 5-day Processing,$15 Per Copy,Electronic PDF or stamped paper parchment dispatched by postal mail.
+Express Transcript Request,Same-day 24-hour Processing,$35 Per Copy,Expedited courier delivery dispatched same day.
+Library Overdue Book Fine,1 to 14 Days Overdue,$1.00 Per Day Per Volume,Borrowing privileges suspended until overdue items returned.
+Library Lost Book Replacement,Exceeding 30 Days Overdue,Cost of Book + $40 Processing Fee,Standard catalog replacement pricing applied.
+Hostel Room Lockout Service,First occurrence per term: Free,$15 Per Subsequent Occurrence,Billed to student term account by Residential Life Office.
+Hostel Lost Electronic Keycard,Immediate replacement,$35 Administrative Surcharge,Old keycard electronically deactivated instantly across all turnstiles.

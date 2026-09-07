@@ -1,0 +1,177 @@
+[
+  {
+    "id": "U01",
+    "category": "Academic Examinations",
+    "question": "What happens if I miss the end-semester examination because of my sister's wedding abroad?",
+    "adjacent_clauses": ["Academic Regulations §8.1 (Medical Hospitalization)", "Academic Regulations §8.2 (Immediate Nuclear Family Bereavement)"],
+    "why_unanswerable": "The rulebook explicitly defines excused absences for inpatient medical hospitalization and nuclear family bereavement (death of parent, sibling, child), but contains zero provisions or exemptions for attending familial weddings or social ceremonies."
+  },
+  {
+    "id": "U02",
+    "category": "Residential Life",
+    "question": "Am I allowed to keep a small aquarium with two goldfish in my hostel room?",
+    "adjacent_clauses": ["Hostel Policy §5.2 (Animal and Pet Prohibition)"],
+    "why_unanswerable": "The policy broadly bans live animals, pets, birds, and reptiles with an exception for guide dogs, but never explicitly addresses aquatic organisms, fish tanks, or water volume limits."
+  },
+  {
+    "id": "U03",
+    "category": "Residential Life",
+    "question": "Can I install an energy-efficient 45-liter mini-fridge in my dorm room if I pay an extra electricity surcharge?",
+    "adjacent_clauses": ["Hostel Policy §4.3 (Electrical Appliance Restrictions)", "Hostel Policy §7.3 (Communal Kitchen Refrigerators)"],
+    "why_unanswerable": "The policy bans high-wattage heating/cooking appliances (hot plates, heaters) and allows laptops/kettles, but is silent on low-wattage refrigeration units or private electricity surcharge permits."
+  },
+  {
+    "id": "U04",
+    "category": "Campus Transport & Parking",
+    "question": "Is there a discounted parking permit rate for students commuting on electric scooters or mopeds?",
+    "adjacent_clauses": ["Disciplinary Charter §1.3 (Unauthorized Parking)", "Hostel Policy §3.1 (Perimeter Gates)"],
+    "why_unanswerable": "The regulations mention motor vehicle parking and bicycle racks, but have no regulations, fee tiers, or registration categories for electric kick-scooters or mopeds."
+  },
+  {
+    "id": "U05",
+    "category": "Curriculum & Registration",
+    "question": "Can an undergraduate student audit a master's-level course without paying a tuition surcharge?",
+    "adjacent_clauses": ["Academic Regulations §2.1 (Credit Loads)", "Academic Regulations §2.3 (Prerequisites)", "Academic Regulations §13.3 (Summer Sessions)"],
+    "why_unanswerable": "The regulations govern enrolled credit limits and prerequisite challenge exams, but omit any official policy on non-credit auditing of postgraduate courses or associated auditing fee structures."
+  },
+  {
+    "id": "U06",
+    "category": "Dining & Meal Plans",
+    "question": "Does the university refund unused hostel meal plan credits at the end of the academic year?",
+    "adjacent_clauses": ["Hostel Policy §7.1 (Compulsory Meal Plans)", "Fee Schedule (Complete University Withdrawal)"],
+    "why_unanswerable": "Hostel regulations define Tier A and Tier B meal allotments and flex credits, but do not specify whether unspent dining credits expire, roll over to the next semester, or are refundable in cash."
+  },
+  {
+    "id": "U07",
+    "category": "Campus Safety & Aviation",
+    "question": "What is the penalty if a student flies a camera drone over the campus sports field for a student film project?",
+    "adjacent_clauses": ["Hostel Policy §2.1 (Quiet Hours)", "Disciplinary Charter §1.1 (Proctorial Campus Jurisdiction)", "Academic Regulations §11.1 (Lab Protocols)"],
+    "why_unanswerable": "The Disciplinary Charter covers non-academic misconduct and property noise, but does not define unmanned aerial vehicle (UAV) airspace restrictions, drone permit requirements, or recreational flight penalties."
+  },
+  {
+    "id": "U08",
+    "category": "Academic Leaves",
+    "question": "Can I take a leave of absence for one semester to participate in a venture-backed commercial startup accelerator?",
+    "adjacent_clauses": ["Academic Regulations §10.1 (Voluntary Personal and Medical Leaves)", "Academic Regulations §10.2 (Leave Duration)"],
+    "why_unanswerable": "Section 10.1 enumerates medical recuperation, mandatory military/civil service, and critical family emergencies as valid leave grounds, but does not address entrepreneurial, venture, or commercial incubation leaves."
+  },
+  {
+    "id": "U09",
+    "category": "Financial Aid & Scholarships",
+    "question": "Does the Chancellor's Premier Scholarship cover the cost of required course textbooks and software licenses?",
+    "adjacent_clauses": ["Scholarship Policy §1.1 (Chancellor's Premier Award Coverage)", "Scholarship Policy §4.2 (Cost of Attendance Stacking)"],
+    "why_unanswerable": "Clause 1.1 explicitly covers full semester tuition, laboratory/computer fees, and a $1,500 living stipend, but never mentions whether book stipends, course packs, or software subscriptions are covered or reimbursed."
+  },
+  {
+    "id": "U10",
+    "category": "Residential Facilities",
+    "question": "If I lose my university student ID card over a bank holiday weekend, can the night porter issue an emergency temporary room key?",
+    "adjacent_clauses": ["Hostel Policy §3.3 (Lost Keys and Lockout Fees)", "Academic Regulations §1.2 (ID Credentials)", "Fee Schedule (Lost Keycard $35)"],
+    "why_unanswerable": "Clause 3.3 and the Fee Schedule state that lost keycards cost $35 for replacement and tutors assist with lockouts, but nowhere is an emergency physical key issuance procedure during holiday office closures detailed."
+  },
+  {
+    "id": "U11",
+    "category": "Student Employment & Health",
+    "question": "Are graduate teaching assistants entitled to university-subsidized health insurance during the summer months?",
+    "adjacent_clauses": ["Scholarship Policy §3.1 (Work-Study Allocation)", "Scholarship Policy §3.2 (Work Hours)", "Academic Regulations §8.1 (Health Center)"],
+    "why_unanswerable": "The policies regulate student work-study hourly wages, term work caps (15 hours), and summer vacation hours (35 hours), but omit healthcare benefit provisions for teaching assistants during non-instructional summer months."
+  },
+  {
+    "id": "U12",
+    "category": "Student Activities & Venues",
+    "question": "Can undergraduate students book university lecture halls for private multiplayer video game tournaments on weekends?",
+    "adjacent_clauses": ["Hostel Policy §2.1 (Noise Mitigation)", "Disciplinary Charter §1.3 (Summary Jurisdiction)", "Academic Regulations §11.2 (Facility Access)"],
+    "why_unanswerable": "The rules outline laboratory access for capstone research and club eligibility under probation, but provide no criteria, booking fees, or guidelines for student reservations of academic spaces for private esports."
+  },
+  {
+    "id": "U13",
+    "category": "Residential Life",
+    "question": "If my roommate snores excessively, can I request an emergency room reassignment during the first two weeks of class?",
+    "adjacent_clauses": ["Hostel Policy §6.1 (Administrative Room Reassignments)", "Hostel Policy §6.2 (Room Transfer Requests)"],
+    "why_unanswerable": "Hostel Clause 6.2 dictates that transfer requests must be filed in Week 3 with a $50 fee after RA mediation, explicitly disallowing transfers for 'trivial personality friction', but never defines whether physiological conditions like severe snoring qualify for expedited health reassignments."
+  },
+  {
+    "id": "U14",
+    "category": "Examinations & Disability",
+    "question": "Can I write my final examination answers in graphite pencil if I have a documented hand tremor?",
+    "adjacent_clauses": ["Academic Regulations §5.2 (Approved Stationery)", "Academic Regulations §5.4 (Disability Accommodations)"],
+    "why_unanswerable": "Section 5.2 mandates black or dark blue ballpoint/ink pens, and Section 5.4 grants extra time and amanuenses (scribes) for registered disabilities, but neither clause specifies whether pencil writing by the candidate themselves is permitted."
+  },
+  {
+    "id": "U15",
+    "category": "Scholarships & Grading",
+    "question": "Will my merit scholarship be terminated if I have an unresolved Incomplete grade at the end of the Autumn term?",
+    "adjacent_clauses": ["Academic Regulations §3.2 (Incomplete Grades)", "Scholarship Policy §1.3 (Merit Maintenance)", "Scholarship Policy §1.4 (Scholarship Probation)"],
+    "why_unanswerable": "The regulations describe the 45-day resolution window for 'I' grades and the 3.75 annual GPA requirement evaluated in the Spring, but do not state how an interim Autumn Incomplete impacts ongoing winter term scholarship disbursements."
+  },
+  {
+    "id": "U16",
+    "category": "Student Commerce",
+    "question": "Can a student set up a folding table in the student union courtyard to sell personal second-hand course textbooks?",
+    "adjacent_clauses": ["Hostel Policy §2.3 (Subletting)", "Disciplinary Charter §1.3 (Campus Misconduct)", "Academic Regulations §7.1 (Academic Conduct)"],
+    "why_unanswerable": "While unauthorized subletting and academic fraud are strictly penalized, there is no policy addressing informal peer-to-peer student commerce, flea sales, or book trading on campus thoroughfares."
+  },
+  {
+    "id": "U17",
+    "category": "Admissions & Civic Duties",
+    "question": "What is the procedure to defer my admission offer if I am summoned for mandatory jury duty during orientation week?",
+    "adjacent_clauses": ["Academic Regulations §1.2 (Matriculation Deadlines)", "Academic Regulations §10.1 (Military/Civil Service Leave)"],
+    "why_unanswerable": "Section 10.1 permits enrolled students to take leaves for military or national service, but the rulebook contains no procedure or timeline for incoming students to defer initial matriculation due to court jury summons."
+  },
+  {
+    "id": "U18",
+    "category": "Campus Transport",
+    "question": "Are bicycle helmets legally required when cycling on internal university pedestrian walkways?",
+    "adjacent_clauses": ["Hostel Policy §3.1 (Perimeter Security)", "Disciplinary Charter §1.3 (Minor Infractions)"],
+    "why_unanswerable": "Campus regulations govern vehicle parking, fire safety, and gate curfews, but specify no traffic codes, speed limits, or protective headgear requirements for campus cyclists."
+  },
+  {
+    "id": "U19",
+    "category": "Disability & Animals",
+    "question": "Can I bring my certified emotional support miniature parrot into the university library?",
+    "adjacent_clauses": ["Hostel Policy §5.2 (Pet Prohibition & Guide Dogs)", "Disciplinary Charter §3.1 (Campus Privileges)"],
+    "why_unanswerable": "Hostel Clause 5.2 explicitly permits only certified guide dogs for visually impaired students and bans all other animals; the rulebook nowhere mentions emotional support animals (ESAs) or policies inside academic libraries."
+  },
+  {
+    "id": "U20",
+    "category": "Faculty & Grading",
+    "question": "If an instructor fails to submit final course grades by the university deadline, does the course automatically convert to pass/fail?",
+    "adjacent_clauses": ["Academic Regulations §3.1 (Grading Matrix)", "Academic Regulations §3.3 (Grade Disputes)"],
+    "why_unanswerable": "The rulebook governs student obligations, incomplete grade conversions, and formal grade appeals, but contains no institutional policy regarding automatic grade conversions or remedies when faculty miss administrative grade submission deadlines."
+  },
+  {
+    "id": "U21",
+    "category": "Honours & Capstone",
+    "question": "Can two students enrolled in a dual-degree engineering program submit a single, co-authored honours thesis?",
+    "adjacent_clauses": ["Academic Regulations §7.1 (Academic Deception)", "Academic Regulations §12.1 (Bachelor's Thesis Standards)"],
+    "why_unanswerable": "Clause 12.1 specifies that honours candidates must complete an 'independent research monograph' of at least 8,000 words, but neither explicitly permits nor prohibits collaborative, multi-author undergraduate thesis submissions across dual disciplines."
+  },
+  {
+    "id": "U22",
+    "category": "Auxiliary Services & Bookstore",
+    "question": "Does the campus bookstore buy back superseded or discontinued textbook editions from students at the end of term?",
+    "adjacent_clauses": ["Fee Schedule (Library Lost Book Charges)", "Academic Regulations §1.1 (Scope of Jurisdiction)"],
+    "why_unanswerable": "The corpus outlines institutional fees, tuition refunds, and library replacement charges, but contains no operating policy, pricing table, or buy-back schedule for the campus bookstore."
+  },
+  {
+    "id": "U23",
+    "category": "Academic Progress",
+    "question": "What happens if a student fails a prerequisite course in Autumn while already conditionally registered for the continuation course in Spring?",
+    "adjacent_clauses": ["Academic Regulations §2.3 (Prerequisite Sequencing)", "Academic Regulations §3.1 (Grade F)", "Academic Regulations §9.2 (Academic Warning)"],
+    "why_unanswerable": "Clause 2.3 strictly forbids enrolling in advanced courses without a grade of 'C' in prerequisites, but does not describe the administrative de-registration workflow or grace notification period if a fall prerequisite is failed after spring pre-registration."
+  },
+  {
+    "id": "U24",
+    "category": "Residential Life & Holidays",
+    "question": "Are hostel quiet hours suspended or extended on New Year's Eve for on-campus residents?",
+    "adjacent_clauses": ["Hostel Policy §2.1 (Quiet Hours Schedule)"],
+    "why_unanswerable": "Clause 2.1 establishes quiet hours for Sunday-Thursday (23:00-07:00) and Friday-Saturday (00:00-08:00), but does not state whether public holidays, statutory celebrations, or New Year's Eve have altered quiet hour schedules."
+  },
+  {
+    "id": "U25",
+    "category": "Intellectual Property",
+    "question": "Can an undergraduate student file a commercial patent developed over the campus WiFi network without assigning ownership to the university?",
+    "adjacent_clauses": ["Academic Regulations §7.1 (Academic Integrity)", "Academic Regulations §11.2 (Research Facility Access)", "Disciplinary Charter §1.1 (Proctorial Jurisdiction)"],
+    "why_unanswerable": "The regulations address student academic plagiarism, thesis defense originality, and laboratory equipment access, but contain no institutional intellectual property (IP) or patent assignment policy governing inventions created using university network infrastructure."
+  }
+]

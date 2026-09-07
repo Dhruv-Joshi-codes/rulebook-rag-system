@@ -1,0 +1,74 @@
+[
+  {
+    "id": "A01",
+    "question": "What is the maximum number of credits an undergraduate student can take in a normal semester without an overload petition?",
+    "expected_answer_contains": ["22 credits", "twenty-two"],
+    "expected_citations": ["Academic Regulations §2.1"]
+  },
+  {
+    "id": "A02",
+    "question": "What minimum CGPA is required to be eligible for academic overload up to 26 credits?",
+    "expected_answer_contains": ["3.60"],
+    "expected_citations": ["Academic Regulations §2.2"]
+  },
+  {
+    "id": "A03",
+    "question": "What happens if an Incomplete grade is not resolved within 45 days?",
+    "expected_answer_contains": ["converts automatically", "failing grade", "F"],
+    "expected_citations": ["Academic Regulations §3.2"]
+  },
+  {
+    "id": "A04",
+    "question": "How much is the administrative review fee to challenge an assigned course grade?",
+    "expected_answer_contains": ["$75"],
+    "expected_citations": ["Academic Regulations §3.3"]
+  },
+  {
+    "id": "A05",
+    "question": "What kind of pens are permitted inside the examination hall?",
+    "expected_answer_contains": ["black and dark blue ballpoint", "indelible ink"],
+    "expected_citations": ["Academic Regulations §5.2"]
+  },
+  {
+    "id": "A06",
+    "question": "What are the hostel quiet hours from Sunday through Thursday?",
+    "expected_answer_contains": ["23:00 to 07:00", "11:00 PM to 7:00 AM"],
+    "expected_citations": ["Hostel Policy §2.1"]
+  },
+  {
+    "id": "A07",
+    "question": "How much is the refundable housing damage security deposit charged at the start of a lease?",
+    "expected_answer_contains": ["$300"],
+    "expected_citations": ["Hostel Policy §1.3"]
+  },
+  {
+    "id": "A08",
+    "question": "What is the maximum wattage allowed for electric kettles in student dorm rooms?",
+    "expected_answer_contains": ["1000 watts"],
+    "expected_citations": ["Hostel Policy §4.3"]
+  },
+  {
+    "id": "A09",
+    "question": "What is the maximum number of work hours permitted per week for full-time students in campus work-study jobs during the semester?",
+    "expected_answer_contains": ["15", "fifteen hours"],
+    "expected_citations": ["Scholarship Policy §3.2"]
+  },
+  {
+    "id": "A10",
+    "question": "What minimum CGPA must a recipient maintain to preserve their merit scholarship?",
+    "expected_answer_contains": ["3.75"],
+    "expected_citations": ["Scholarship Policy §1.3"]
+  },
+  {
+    "id": "A11",
+    "question": "What is the daily overdue fine for a library book?",
+    "expected_answer_contains": ["$1.00", "$1"],
+    "expected_citations": ["Fee Schedule Row 15"]
+  },
+  {
+    "id": "A12",
+    "question": "Within how many calendar days must a student lodge an appeal against a disciplinary suspension to the Appellate Senate Standing Board?",
+    "expected_answer_contains": ["14 calendar days", "fourteen"],
+    "expected_citations": ["Disciplinary Charter §18.1"]
+  }
+]
