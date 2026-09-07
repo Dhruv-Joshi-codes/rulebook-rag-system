@@ -27,3 +27,4 @@ data/*.sqlite3
 
 # Task logs & scratch
 *.log
+.ollama/
